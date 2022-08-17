@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System;
-using NewtonSoft.Json;
-using NewtwonSoft.Json.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
-namespace WhackAnimalClient.Models
+namespace WhackAnimals.Models
 {
   public class Fact
   {
@@ -12,15 +12,16 @@ namespace WhackAnimalClient.Models
     public string Species { get; set; }
     public string Description { get; set; }
     public string Nsfw { get; set; }
+    public string ImageUrl {get;set;}
     
-    public static Array<Fact> GetFacts()
+    public static List<Fact>  GetFacts()
     {
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
       
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Fact> factList = JsonConvert.DeserializeObject<List<Fact>>(jsonResponse.ToString());
-      //Can be changed to list, to array may need a different method.
+      
       return factList;
     }
     
@@ -30,7 +31,7 @@ namespace WhackAnimalClient.Models
       var result = apiCallTask.Result;
       
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      Fact fact =JsonConvert.DserializeObject<Fact>(jsonResponse.ToString());
+      Fact fact = JsonConvert.DeserializeObject<Fact>(jsonResponse.ToString());
       
       return fact;
     }

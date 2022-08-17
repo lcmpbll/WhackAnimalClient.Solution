@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace WhackAnimal.Models
+namespace WhackAnimals.Models
 {
   class ApiHelper
   {
-    public static async Taask<string> GetAll()
+    public static async Task<string> GetAll()
     {
       RestClient client = new RestClient("http://localhhost:5004/api"); //http://localhhost:5004/api/v1 ?
       RestRequest request = new RestRequest($"facts", Method.GET);
