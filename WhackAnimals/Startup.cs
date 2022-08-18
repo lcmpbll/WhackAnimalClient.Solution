@@ -41,7 +41,7 @@ namespace WhackAnimals
             }
             
             // app.UseHttpsRedirection();
-
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseRouting();

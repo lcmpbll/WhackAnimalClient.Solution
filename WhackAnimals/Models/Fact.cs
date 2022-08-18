@@ -15,6 +15,8 @@ namespace WhackAnimals.Models
     public string ImageUrl { get; set; }
     //public string FoundSpecies { get { return Description.Contains(Species);} }
     public string Question {get { return Description.ToUpper().Replace(Species.ToUpper(), "___________");}}
+    public string Answer { get; set; }
+    public bool Check { get { return Species.ToUpper().Contains(Answer.ToUpper());}}
     
     public static List<Fact> GetFacts()
     {
@@ -40,6 +42,15 @@ namespace WhackAnimals.Models
       
       return fact;
     }
+    
+    // public static List<Fact> GetBingo(allFacts)
+    // {
+    //   var random = new Random();
+    //   for( int i = 0; i <= 24; i ++)
+    //   {
+    //     int
+    //   }
+    // }
     
     
   }

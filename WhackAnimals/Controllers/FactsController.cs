@@ -16,7 +16,7 @@ namespace WhackAnimals.Controllers
       var allFacts = Fact.GetFacts();
       var random = new Random();
       int index = random.Next(allFacts.Count);
-  
+     
       return View(allFacts[index]);
   }
   

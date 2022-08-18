@@ -1,42 +1,96 @@
 <!-- <h1>All Animals:</h1> -->
-
+@* @{  var imagePath= "";
+    if( "animalChoice" != null){
+        imagePath = @"~/img", "animalChoice"
+   }
+} *@
 @using WhackAnimals.Models;
 @model WhackAnimals.Models.Fact;
 
 
 
-@* @foreach (Fact fact in Model)
-{
-    <h2>
-        <p>@fact.Description</p>
-        
-    </h2>
-   
-    <br> 
-} *@
+ <h2>@Html.DisplayFor(model => model.Question)
+ </h2>
 
 
- <p>@Html.DisplayFor(model => model.Question)</p>
-
-@* <div class="table" >
+<div class="table" >
 <table class="display" id="example">
+    
     <thead>
         <tr>
-            <th>Facts</th>
+            <th>B</th>
+            <th>I</th>
+            <th>N</th>
+            <th>G</th>
+            <th>O</th>
 
         </tr>
     </thead>
     <tbody>
-        @foreach (Fact fact in Model)
+
+<form>
+    <tr>
+    <input type="image" alt="Vampire Bat" class="imageClick" src="~/img/bat.jpg">
+    <input type="image" alt="Bear" class="imageClick" src="~/img/bear.jpg">
+    <input type="image" alt="Bearcat" class="imageClick" src="~/img/bearcat.jpg">
+    <input type="image" alt="Beaver" class="imageClick" src="~/img/beaver.jpg">
+    <input type="image" alt="Bee" class="imageClick" src="~/img/bee.jpg">
+    <input type="image" alt="Bird" class="imageClick" src="~/img/bird.jpg">
+    <input type="image" alt="Black Widow" class="imageClick" src="~/img/blackWidow.jpg">
+    <input type="image" alt="Bullet Ant" class="imageClick" src="~/img/bulletant.jpg">
+    <input type="image" alt="Cobra" class="imageClick" src="~/img/cobra.jpg">
+    <input type="image" alt="Coned Snail" class="imageClick" src="~/img/conedsnail.jpg">
+    <input type="image" alt="Crocodile" class="imageClick" src="~/img/croc.jpg">
+    <input type="image" alt="Deer" class="imageClick" src="~/img/deer.jpg">
+    <input type="image" alt="Dolphin" class="imageClick" src="~/img/dolphin.jpg">
+    <input type="image" alt="Duck" class="imageClick" src="~/img/duck.jpg">
+    <input type="image" alt="Eel" class="imageClick" src="~/img/eel.jpg">
+    <input type="image" alt="Frog" class="imageClick" src="~/img/frog.jpg">
+ </tr>
+ </form>
+
+        @* @foreach (var fact in ViewBag.Species)
         {
 
             <tr>
                 <td><p> @fact.Species</p></td>
             </tr>
-        }
+        } *@
     </tbody>
 </table> 
-</div> *@
+</div>
+
+<div class="form">
+    <form onsubmit="return false;">
+    
+@* <span id="#answer">@Html.DisplayFor(model => model.Species)</span> *@
+<span id="#input">@Html.TextBoxFor(model => model.Answer)</span>
+<input type="submit" class="button" id="submit" value="Fact">
+    </form>
+</div>
+<div class="correct">
+    <h3>That's correct</h3>
+</div>
+<div class="incorrect">
+    <h3>That's incorrect</h3>
+</div>
+<br>
+<form>
+    <input type="submit" value="Next Fact">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @* 
@@ -50,3 +104,21 @@
            ImageUrl="images/image1.jpg"/>
   
    </form>  *@
+
+   @* <form method="post" action="">
+    <div>
+        Choose Animal:
+        <select name="animalChoice">
+            <option value="bat.jpg">BAT</option>
+            <option value="bear.jpg">BEAR</option>
+            <option value="bearcat.jpg">BEARCAT</option>
+        </select>
+        &nbsp;
+        <input type="submit" value="Submit" />
+    </div>
+    <div style="padding:10px;">
+        @if(imagePath != ""){
+            <img src="@imagePath" alt="Sample Image" width="300px" />
+        }
+    </div> *@
+@* </form> *@
