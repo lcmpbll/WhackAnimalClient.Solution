@@ -14,9 +14,12 @@ namespace WhackAnimals.Controllers
     public IActionResult Index()
     {
       var allFacts = Fact.GetFacts();
-      return View(allFacts);
-    }
-
+      var random = new Random();
+      int index = random.Next(allFacts.Count);
+  
+      return View(allFacts[index]);
+  }
+  
 
   }
 }

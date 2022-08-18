@@ -12,7 +12,9 @@ namespace WhackAnimals.Models
     public string Species { get; set; }
     public string Description { get; set; }
     public string Nsfw { get; set; }
-    public string ImageUrl { get;set; }
+    public string ImageUrl { get; set; }
+    //public string FoundSpecies { get { return Description.Contains(Species);} }
+    public string Question {get { return Description.ToUpper().Replace(Species.ToUpper(), "___________");}}
     
     public static List<Fact> GetFacts()
     {

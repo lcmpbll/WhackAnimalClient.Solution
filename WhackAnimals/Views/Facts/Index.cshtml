@@ -1,11 +1,11 @@
 <!-- <h1>All Animals:</h1> -->
 
-@model IEnumerable<WhackAnimals.Models.Fact>
+@using WhackAnimals.Models;
+@model WhackAnimals.Models.Fact;
 
 
 
-
-@foreach (Fact fact in Model)
+@* @foreach (Fact fact in Model)
 {
     <h2>
         <p>@fact.Description</p>
@@ -13,10 +13,10 @@
     </h2>
    
     <br> 
-}
+} *@
+ <p>@Html.DisplayFor(model => model.Question)</p>
 
-
-<div class="table" >
+@* <div class="table" >
 <table class="display" id="example">
     <thead>
         <tr>
@@ -34,7 +34,7 @@
         }
     </tbody>
 </table> 
-</div>
+</div> *@
 
 
 @* 
