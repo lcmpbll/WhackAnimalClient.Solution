@@ -3,21 +3,40 @@ using RestSharp;
 
 namespace WhackAnimals.Models
 {
-  class ApiHelper
+  // class ApiHelper
+  // {
+  //   public static async Task<string> GetAll()
+  //   {
+  //     RestClient client = new RestClient("http://localhhost:5004/api/v1/Facts"); //http://localhhost:5004/api/v1 ?
+  //     RestRequest request = new RestRequest($"facts", Method.GET);
+  //     var response = await client.ExecuteTaskAsync(request);
+  //     return response.Content;
+  //   }
+    
+  //    public static async Task<string> Get(int id)
+  //   {
+  //     RestClient client = new RestClient("http://localhost:5004/api");
+  //     RestRequest request =  new RestRequest($"facts/{id}", Method.GET);
+  //     var response =  await client.ExecuteTaskAsync(request);
+  //     return response.Content;
+  //   }
+  // }
+  
+   class ApiHelper
   {
     public static async Task<string> GetAll()
     {
-      RestClient client = new RestClient("http://localhhost:5004/api"); //http://localhhost:5004/api/v1 ?
-      RestRequest request = new RestRequest($"facts", Method.GET);
+      RestClient client = new RestClient("http://localhost:5004/api/v1");
+      RestRequest request = new RestRequest($"/facts/", Method.GET);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
-    
-     public static async Task<string> Get(int id)
+
+    public static async Task<string> Get(int id)
     {
-      RestClient client = new RestClient("http://localhost:5004/api");
-      RestRequest request =  new RestRequest($"facts/{id}", Method.GET);
-      var response =  await client.ExecuteTaskAsync(request);
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"animals/{id}", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
   }

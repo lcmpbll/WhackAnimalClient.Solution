@@ -1,0 +1,51 @@
+<!-- <h1>All Animals:</h1> -->
+
+@model IEnumerable<WhackAnimals.Models.Fact>
+
+
+
+
+<ol>
+@foreach (Fact fact in Model)
+{
+    <ul>
+        <li> Description: @fact.Description</li>
+        
+    </ul>
+   
+    <br> 
+}
+</ol>
+
+
+
+<table class="display" id="example">
+    <thead>
+        <tr>
+            <th>Facts</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var fact in Model)
+        {
+
+            <tr>
+                <td><p src="@fact.Description"></p></td>
+            </tr>
+        }
+    </tbody>
+</table> 
+
+
+
+   <form id="form1" runat="server">
+
+      <h3>Image Example</h3>
+
+      <asp:Image id="Image1" runat="server"
+           AlternateText="Image text"
+           ImageAlign="left"
+           ImageUrl="images/image1.jpg"/>
+  
+   </form> 

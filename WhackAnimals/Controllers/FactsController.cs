@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WhackAnimals.Models;
 
-namespace WhackAnimals.Controllers.v1
+namespace WhackAnimals.Controllers
 {
-  public class FactsV1Controller: Controller
+  public class FactsController: Controller
   {
     public IActionResult Index()
     {

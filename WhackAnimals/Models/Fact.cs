@@ -12,12 +12,15 @@ namespace WhackAnimals.Models
     public string Species { get; set; }
     public string Description { get; set; }
     public string Nsfw { get; set; }
-    public string ImageUrl {get;set;}
+    public string ImageUrl { get;set; }
     
-    public static List<Fact>  GetFacts()
+    public static List<Fact> GetFacts()
     {
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
+      
+      // JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      // List<Fact> factList = JsonConvert.DeserializeObject<List<Fact>>(jsonResponse.ToString());
       
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Fact> factList = JsonConvert.DeserializeObject<List<Fact>>(jsonResponse.ToString());
