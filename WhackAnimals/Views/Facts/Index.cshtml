@@ -5,20 +5,18 @@
 
 
 
-<ol>
 @foreach (Fact fact in Model)
 {
-    <ul>
-        <li> Description: @fact.Description</li>
+    <h2>
+        <p>@fact.Description</p>
         
-    </ul>
+    </h2>
    
     <br> 
 }
-</ol>
 
 
-
+<div class="table" >
 <table class="display" id="example">
     <thead>
         <tr>
@@ -27,18 +25,19 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var fact in Model)
+        @foreach (Fact fact in Model)
         {
 
             <tr>
-                <td><p src="@fact.Description"></p></td>
+                <td><p> @fact.Species</p></td>
             </tr>
         }
     </tbody>
 </table> 
+</div>
 
 
-
+@* 
    <form id="form1" runat="server">
 
       <h3>Image Example</h3>
@@ -48,4 +47,4 @@
            ImageAlign="left"
            ImageUrl="images/image1.jpg"/>
   
-   </form> 
+   </form>  *@
